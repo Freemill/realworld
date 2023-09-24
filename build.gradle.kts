@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 plugins {
     java
     id("org.springframework.boot") version "3.1.3"
@@ -36,3 +38,10 @@ dependencies {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.jar{
+    enabled = false
+}
+//./gradlew bootJar = jar파일 생성
+//./gradlew build = test + plain-jar , jar 파일 생성
+// ./gradlew test bootJar
