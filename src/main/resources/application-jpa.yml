@@ -1,0 +1,19 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+---
+spring:
+  config.activate.on-profile: local
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+---
+spring:
+  config.activate.on-profile: dev
+
+---
+spring:
+  config.activate.on-profile: prod

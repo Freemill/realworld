@@ -1,6 +1,12 @@
+server:
+  shutdown: graceful
+
+
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/realworld
-    username : sms
-    password : qwerty123
+  profiles:
+    active: local
+    include: jpa, datasource
+
+
+
 

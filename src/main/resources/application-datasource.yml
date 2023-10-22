@@ -1,0 +1,15 @@
+spring:
+  config.activate.on-profile: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/realworld
+    username : sms
+    password : qwerty123
+
+---
+spring:
+  config.activate.on-profile: dev
+
+
+---
+spring:
+  config.activate.on-profile: prod
