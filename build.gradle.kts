@@ -11,6 +11,7 @@ version = "0.0.1-SNAPSHOT"  //빌드 파일의 이름 지정 용도
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 configurations {
@@ -42,9 +43,7 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-tasks.jar{
-    enabled = false
-}
+
 //./gradlew bootJar = jar파일 생성
 //./gradlew build = test + plain-jar , jar 파일 생성
 // ./gradlew test bootJar
