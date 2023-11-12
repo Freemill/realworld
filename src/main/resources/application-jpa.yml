@@ -7,8 +7,12 @@ spring:
 spring:
   config.activate.on-profile: local
   jpa:
-    hibernate:
-      ddl-auto: create-drop
+    generate-ddl: true
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+      schema-locations: classpath:db/init_schema.sql
 
 ---
 spring:
