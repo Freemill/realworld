@@ -1,9 +1,15 @@
 package com.sms.me.realworld.core.domain.user;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "users") //user는 예약어
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class UserEntity {
 
     @Id
@@ -15,6 +21,12 @@ public class UserEntity {
 
     @Column(nullable = false)
     private String password;
-//varchar(255) -> text로 바꾸기 검색 UserEntity 만들기
+
+    public User toUser() {
+        return User.builder()
+                .id(id)
+                .email(email)
+                .build();
+    }
 
 }
