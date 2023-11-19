@@ -1,15 +1,14 @@
 package com.sms.me.realworld.core.domain.user;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+@Builder
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "users") //user는 예약어
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
 public class UserEntity {
 
     @Id
@@ -22,11 +21,6 @@ public class UserEntity {
     @Column(nullable = false)
     private String password;
 
-    public User toUser() {
-        return User.builder()
-                .id(id)
-                .email(email)
-                .build();
-    }
+
 
 }

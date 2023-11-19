@@ -1,11 +1,12 @@
 package com.sms.me.realworld.api.controller.dto;
 
 import com.sms.me.realworld.core.domain.user.User;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class SignupResponse {
 
     private Long userId;

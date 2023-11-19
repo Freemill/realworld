@@ -10,13 +10,10 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public User signup(SignupCommand command) {
-        UserEntity userEntity = UserEntity.builder()
-                .email(command.getEmail())
-                .password(command.getPassword())
-                .build();
+    public User signup(SignupCommand command){
 
-        return userRepository.save(userEntity).toUser();
+        return User.of(userRepository.save(command.toEntity()));
+
     }
 
 
