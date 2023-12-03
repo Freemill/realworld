@@ -1,3 +1,21 @@
 jasypt:
   encryptor:
     bean: jasyptEncryptor
+
+spring:
+  config.activate.on-profile: local
+token:
+  secret: secretsecretsecretsecretsecretsecretsecretsecret
+  duration: 10m
+---
+spring:
+  config.activate.on-profile: dev
+token:
+  secret: ENC(xIsTgIQ3H464YiT1X9+AxK0bIRTBXQJtHnmf/90sYaGB+yyHW+p3C/0USsnO1Jex)
+  duration: 1d
+---
+spring:
+  config.activate.on-profile: prod
+token:
+  secret: ENC(q0E3w6DA012doHKmPliElDxLXsloWWVdXV9kvcnMDVM88fY7aL1vXOaOi2m5DPE1o2LTJGq5xIU=)
+  duration: 1d
