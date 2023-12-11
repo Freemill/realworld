@@ -14,11 +14,15 @@ public class SignupRequest {
     @Size(min = 8, max = 32)
     private String password;
 
+    @Size(min = 2, max = 20)
+    private String username;
+
 
     public SignupCommand toCommand() {
         return SignupCommand.builder()
                 .email(email)
                 .password(password)
+                .username(username)
                 .build();
     }
 }

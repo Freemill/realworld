@@ -21,5 +21,12 @@ public class UserEntity {
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
+    private String username;
 
+    @Column(columnDefinition = "text", nullable = true)
+    private String bio;
+
+    @Column(nullable = true)
+    private String image;
 }
