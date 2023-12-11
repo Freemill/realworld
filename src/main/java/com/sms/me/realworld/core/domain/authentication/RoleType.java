@@ -1,12 +1,9 @@
 package com.sms.me.realworld.core.domain.authentication;
 
-import java.util.Arrays;
-import java.util.Map;
-
 public enum RoleType {
-    USER,
-    ADMIN,
-    NO_AUTH,
+    ROLE_USER,
+    ROLE_ADMIN,
+    ROLE_NO_AUTH,
     ;
 
 }

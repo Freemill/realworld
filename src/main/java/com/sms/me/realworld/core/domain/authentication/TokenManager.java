@@ -42,7 +42,7 @@ public class TokenManager {
         return Jwts.builder()
                 .issuer(ISSUER)
                 .subject(userId.toString())
-                .claim(ROLE, RoleType.USER)
+                .claim(ROLE, RoleType.ROLE_USER)
                 .expiration(expiration)
                 .signWith(secretKey)
                 .compact();
