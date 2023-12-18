@@ -13,10 +13,10 @@ public class SignupCommand {
     private String username;
 
 
-    public UserEntity toEntity() {
+    public UserEntity toEntity(String encryptedPassword) {
         return UserEntity.builder()
                 .email(email)
-                .password(password)
+                .password(encryptedPassword)
                 .username(username)
                 .build();
     }

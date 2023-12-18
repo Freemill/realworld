@@ -10,4 +10,5 @@ import java.time.Duration;
 public class TokenProperties {
     public final String secret;
     public final Duration duration;
+
 }
