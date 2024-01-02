@@ -13,7 +13,7 @@ import lombok.Getter;
 @Getter
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class SignupResponse {
+public class LoginResponse {
 
     private String email;
     private String token;
@@ -21,8 +21,8 @@ public class SignupResponse {
     private String bio;
     private String image;
 
-    public static SignupResponse of(User user) {
-        return SignupResponse.builder()
+    public static LoginResponse of(User user) {
+        return LoginResponse.builder()
                 .email(user.getEmail())
                 .token(user.getToken())
                 .username(user.getUsername())

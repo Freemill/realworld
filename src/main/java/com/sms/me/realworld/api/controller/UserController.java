@@ -1,5 +1,7 @@
 package com.sms.me.realworld.api.controller;
 
+import com.sms.me.realworld.api.controller.dto.LoginRequest;
+import com.sms.me.realworld.api.controller.dto.LoginResponse;
 import com.sms.me.realworld.api.controller.dto.SignupRequest;
 import com.sms.me.realworld.api.controller.dto.SignupResponse;
 import com.sms.me.realworld.core.domain.user.User;
@@ -28,5 +30,14 @@ public class UserController {
     ) {
         User user = userService.signup(request.toCommand());
         return SignupResponse.of(user);
+    }
+
+    @PostMapping("/login")
+    @PreAuthorize("hasRole('NO_AUTH')")
+    public LoginResponse login(
+            @RequestBody @Valid LoginRequest request
+    ) {
+        User user = userService.login(request.toCommand());
+        return LoginResponse.of(user);
     }
 }
