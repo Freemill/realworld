@@ -1,6 +1,7 @@
 package com.sms.me.realworld.api.controller;
 
 import com.sms.me.realworld.api.controller.dto.*;
+import com.sms.me.realworld.api.docs.UserApiSpec;
 import com.sms.me.realworld.api.security.AuthUserDetails;
 import com.sms.me.realworld.core.domain.user.User;
 import com.sms.me.realworld.core.domain.user.UserQueryService;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
 @Slf4j
-public class UserController {
+public class UserController implements UserApiSpec {
 
     private final UserService userService;
     private final UserQueryService userQueryService;
