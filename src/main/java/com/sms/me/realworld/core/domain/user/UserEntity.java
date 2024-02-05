@@ -29,4 +29,13 @@ public class UserEntity {
 
     @Column(nullable = true)
     private String image;
+
+    public UserEntity update(String email, String username, String password, String bio, String image) {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.bio = bio;
+        this.image = image;
+        return this;
+    }
 }

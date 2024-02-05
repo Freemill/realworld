@@ -2,8 +2,8 @@ spring:
   config.activate.on-profile: local
   datasource:
     url: jdbc:mysql://localhost:3306/realworld
-    username : sms
-    password : qwerty123
+    username: sms
+    password: qwerty123
 
 ---
 spring:
@@ -14,5 +14,5 @@ spring:
     password: ENC(ab18+wsT1dg62d2Vsmv7bJLrJpw2EquM)
 
 ---
-spring:
+springS:
   config.activate.on-profile: prod

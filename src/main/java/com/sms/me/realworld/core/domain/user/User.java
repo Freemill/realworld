@@ -19,7 +19,6 @@ public class User {
     private String image;
 
 
-    //정적 factory method
     public static User of(UserEntity entity, String token) {
         return User.builder()
                 .id(entity.getId())

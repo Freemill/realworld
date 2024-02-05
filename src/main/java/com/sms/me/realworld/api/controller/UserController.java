@@ -53,4 +53,16 @@ public class UserController implements UserApiSpec {
         return UserResponse.of(user);
     }
 
+    @PutMapping
+    @PreAuthorize("hasRole('USER')")
+    public UserResponse updateUser(
+            @AuthenticationPrincipal AuthUserDetails userDetails,
+            @RequestBody @Valid UserUpdateRequest request
+    ) {
+        User user = userService.updateUser(userDetails.userId, request.toCommand());
+
+        return UserResponse.of(user);
+    }
+
+
 }
