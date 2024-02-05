@@ -15,6 +15,9 @@ public interface UserApiSpec {
     LoginResponse login(LoginRequest request, AuthUserDetails userDetails);
 
     @Operation(summary = "로그인 유저 조회")
-    public UserResponse getUser(AuthUserDetails userDetails);
+    UserResponse getUser(AuthUserDetails userDetails);
+
+    @Operation(summary = "로그인 유저 수정")
+    public UserResponse updateUser(AuthUserDetails userDetails, UserUpdateRequest request);
 
 }
