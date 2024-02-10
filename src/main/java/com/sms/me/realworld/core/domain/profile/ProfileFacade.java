@@ -18,4 +18,10 @@ public class ProfileFacade {
         return Profile.of(targetUser, follow);
     }
 
+    public Profile follow(Long followingId, String targetUsername) {
+        User targetUser = userQueryService.getUserOrThrow(targetUsername);
+        followService.follow(followingId, targetUser.getId());
+        return Profile.of(targetUser, true);
+    }
+
 }

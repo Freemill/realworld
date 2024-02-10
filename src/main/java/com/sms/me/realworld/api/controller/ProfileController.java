@@ -7,10 +7,7 @@ import com.sms.me.realworld.core.domain.profile.ProfileFacade;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/profiles")
@@ -27,6 +24,18 @@ public class ProfileController {
     ) {
         Long userId = userDetails.userId;
         Profile profile = profileFacade.getProfile(userId, username);
+
+        return ProfileResponse.of(profile);
+    }
+
+    @PostMapping("/{username}/follow")
+    public ProfileResponse follow(
+            @AuthenticationPrincipal AuthUserDetails userDetails,
+            @PathVariable String username
+    ) {
+        Long userId = userDetails.userId;
+        Profile profile = profileFacade.follow(userId, username);
+
         return ProfileResponse.of(profile);
     }
 }
