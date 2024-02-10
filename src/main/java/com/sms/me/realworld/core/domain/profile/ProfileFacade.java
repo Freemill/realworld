@@ -24,4 +24,9 @@ public class ProfileFacade {
         return Profile.of(targetUser, true);
     }
 
+    public Profile unfollow(Long followingId, String targetUsername) {
+        User targetUser = userQueryService.getUserOrThrow(targetUsername);
+        followService.unfollow(followingId, targetUser.getId());
+        return Profile.of(targetUser, false);
+    }
 }

@@ -38,4 +38,15 @@ public class ProfileController {
 
         return ProfileResponse.of(profile);
     }
+
+    @DeleteMapping("/{username}/follow")
+    public ProfileResponse unfollow(
+            @AuthenticationPrincipal AuthUserDetails userDetails,
+            @PathVariable String username
+    ) {
+        Long userId = userDetails.userId;
+        Profile profile = profileFacade.unfollow(userId, username);
+
+        return ProfileResponse.of(profile);
+    }
 }
