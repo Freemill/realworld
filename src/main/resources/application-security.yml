@@ -1,7 +1,7 @@
 jasypt:
   encryptor:
     bean: jasyptEncryptor
-
+---
 spring:
   config.activate.on-profile: local
 token:
@@ -11,11 +11,11 @@ token:
 spring:
   config.activate.on-profile: dev
 token:
-  secret: ENC(xIsTgIQ3H464YiT1X9+AxK0bIRTBXQJtHnmf/90sYaGB+yyHW+p3C/0USsnO1Jex)
+  secret: ENC(eR+9fFJXsZAbZe016bEdE4km26cFFRahw2OMW/mvvh9Ja106gD/zqZTW6c9s8+xCGaOKwyPyhKWxIQio67w8OgFQRIZxgwbHFzIYVvfzmE6XKWa8u1GUe5w3iqEkVl6JRBS902oMMCc=)
   duration: 1d
 ---
 spring:
   config.activate.on-profile: prod
 token:
-  secret: ENC(q0E3w6DA012doHKmPliElDxLXsloWWVdXV9kvcnMDVM88fY7aL1vXOaOi2m5DPE1o2LTJGq5xIU=)
+  secret: ENC(qtaJWd0HLtgq7+tXwF5Tz8x4sgZbZ+nZOcSbNO90gTldwEu6T+7sWKSK+zdlmWSAeucE7BW2Lr0oOR9Y4hIEXwt2pwsN/l2meJIBNXaCtvVUhatB/OWUWS02SjLapEnS95jw0VGpdWg=)
   duration: 1d

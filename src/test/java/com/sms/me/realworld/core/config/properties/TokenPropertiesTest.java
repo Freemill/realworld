@@ -14,8 +14,8 @@ class TokenPropertiesTest {
 
     @Test
     void propertiesTest() {
-        log.info("secret = {}", properties.getSecret());
-        log.info("duration = {}", properties.getDuration());
+        log.info("secret = {}", properties.secret);
+        log.info("duration = {}", properties.duration);
     }
 
 

@@ -14,4 +14,4 @@ create table follows
     id           bigint primary key key auto_increment comment '팔로우 시퀀스',
     following_id bigint not null comment '팔로우 유저 아이디',
     follower_id  bigint not null comment '팔로워 유저 아이디'
-)
+);
