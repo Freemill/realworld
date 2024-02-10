@@ -2,10 +2,11 @@ package com.sms.me.realworld.core.domain.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
 
-interface UserRepository extends JpaRepository<UserEntity, Long> {
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
-    UserEntity findByEmail(String email);
+    Optional<UserEntity> findByEmail(String email);
 
-
+    Optional<UserEntity> findByUsername(String username);
 }

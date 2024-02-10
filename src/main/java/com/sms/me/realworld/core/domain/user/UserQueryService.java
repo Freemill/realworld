@@ -16,4 +16,9 @@ public class UserQueryService {
         return User.of(entity, null);
     }
 
+    public User getUserOrThrow(String username) {
+        UserEntity entity = userRepository.findByUsername(username).orElseThrow(() -> new RealException(ErrorType.USER_NOT_FOUND));
+        return User.of(entity, null);
+    }
+
 }

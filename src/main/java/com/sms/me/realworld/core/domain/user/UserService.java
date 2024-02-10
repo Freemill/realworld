@@ -31,7 +31,9 @@ public class UserService {
     }
 
     public User login(LoginCommand command) {
-        UserEntity userEntity = userRepository.findByEmail(command.getEmail());
+        UserEntity userEntity = userRepository.findByEmail(command.getEmail())
+                .orElseThrow(() -> new RealException(ErrorType.NOT_FOUND));
+
         if (!passwordEncoder.matches(command.getPassword(), userEntity.getPassword())) {
             throw new IllegalArgumentException("임시 에러");
         }
@@ -44,7 +46,8 @@ public class UserService {
 
     @Transactional
     public User updateUser(Long userId, UserUpdateCommand command) {
-        UserEntity userEntity = userRepository.findByEmail(command.getEmail());
+        UserEntity userEntity = userRepository.findByEmail(command.getEmail())
+                .orElseThrow(() -> new RealException(ErrorType.NOT_FOUND));
 
         if (!Objects.equals(userEntity.getId(), userId)) {
             throw new RealException(ErrorType.FORBIDDEN);
