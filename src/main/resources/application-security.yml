@@ -6,7 +6,7 @@ spring:
   config.activate.on-profile: local
 token:
   secret: secretsecretsecretsecretsecretsecretsecretsecret
-  duration: 10m
+  duration: 1d
 ---
 spring:
   config.activate.on-profile: dev
