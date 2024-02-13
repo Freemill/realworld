@@ -1,6 +1,7 @@
 package com.sms.me.realworld.api.controller;
 
 import com.sms.me.realworld.api.controller.dto.TagListResponse;
+import com.sms.me.realworld.api.docs.TagApiSpec;
 import com.sms.me.realworld.core.domain.tag.Tag;
 import com.sms.me.realworld.core.domain.tag.TagService;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/tags")
 @Slf4j
-public class TagController {
+public class TagController implements TagApiSpec {
 
     private final TagService tagService;
 

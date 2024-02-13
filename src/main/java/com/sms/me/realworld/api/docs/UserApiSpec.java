@@ -18,6 +18,6 @@ public interface UserApiSpec {
     UserResponse getUser(AuthUserDetails userDetails);
 
     @Operation(summary = "로그인 유저 수정")
-    public UserResponse updateUser(AuthUserDetails userDetails, UserUpdateRequest request);
+    UserResponse updateUser(AuthUserDetails userDetails, UserUpdateRequest request);
 
 }

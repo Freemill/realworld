@@ -1,6 +1,7 @@
 package com.sms.me.realworld.api.controller;
 
 import com.sms.me.realworld.api.controller.dto.ProfileResponse;
+import com.sms.me.realworld.api.docs.ProfileApiSpec;
 import com.sms.me.realworld.api.security.AuthUserDetails;
 import com.sms.me.realworld.core.domain.profile.Profile;
 import com.sms.me.realworld.core.domain.profile.ProfileFacade;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/profiles")
 @RequiredArgsConstructor
 @Slf4j
-public class ProfileController {
+public class ProfileController implements ProfileApiSpec {
 
     private final ProfileFacade profileFacade;
 
