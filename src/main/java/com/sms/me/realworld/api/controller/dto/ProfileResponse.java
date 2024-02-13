@@ -18,14 +18,14 @@ public class ProfileResponse {
     private String username;
     private String bio;
     private String image;
-    private boolean follow;
+    private boolean following;
 
     public static ProfileResponse of(Profile profile) {
         return ProfileResponse.builder()
                 .username(profile.getUsername())
                 .bio(profile.getBio())
                 .image(profile.getImage())
-                .follow(profile.isFollow())
+                .following(profile.isFollowing())
                 .build();
     }
 }

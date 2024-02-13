@@ -4,8 +4,8 @@ create table users
     email    varchar(50)  not null comment '이메일',
     password varchar(255) not null comment '비밀번호',
     username varchar(255) not null comment '유저명',
-    bio      text         default null comment '자기소개',
-    image    varchar(255) default null comment '이미지',
+    bio      text         not null default '' comment '자기소개',
+    image    varchar(255) not null default '' comment '이미지',
     unique uk_email (email),
     unique uk_username (username)
 );

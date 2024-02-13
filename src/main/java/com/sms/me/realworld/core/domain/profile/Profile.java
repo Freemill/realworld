@@ -14,14 +14,14 @@ public class Profile {
     private String username;
     private String bio;
     private String image;
-    private boolean follow;
+    private boolean following;
 
-    public static Profile of(User user, boolean follow) {
+    public static Profile of(User user, boolean following) {
         return Profile.builder()
                 .username(user.getUsername())
                 .bio(user.getBio())
                 .image(user.getImage())
-                .follow(follow)
+                .following(following)
                 .build();
     }
 }

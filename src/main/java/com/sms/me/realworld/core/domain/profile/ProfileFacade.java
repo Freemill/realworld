@@ -14,8 +14,8 @@ public class ProfileFacade {
 
     public Profile getProfile(Long followingId, String targetUsername) {
         User targetUser = userQueryService.getUserOrThrow(targetUsername);
-        boolean follow = followService.isFollowing(followingId, targetUser.getId());
-        return Profile.of(targetUser, follow);
+        boolean following = followService.isFollowing(followingId, targetUser.getId());
+        return Profile.of(targetUser, following);
     }
 
     public Profile follow(Long followingId, String targetUsername) {

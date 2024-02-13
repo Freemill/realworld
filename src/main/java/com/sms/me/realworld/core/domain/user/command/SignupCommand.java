@@ -8,6 +8,8 @@ import lombok.Getter;
 @Builder
 public class SignupCommand {
 
+    private static final String DEFAULT_IMAGE_URL = "https://api.realworld.io/images/smiley-cyrus.jpeg";
+
     private String email;
     private String password;
     private String username;
@@ -18,6 +20,8 @@ public class SignupCommand {
                 .email(email)
                 .password(encryptedPassword)
                 .username(username)
+                .bio("")
+                .image(DEFAULT_IMAGE_URL)
                 .build();
     }
 
