@@ -6,7 +6,8 @@ create table users
     username varchar(255) not null comment '유저명',
     bio      text         default null comment '자기소개',
     image    varchar(255) default null comment '이미지',
-    unique uk_email (email)
+    unique uk_email (email),
+    unique uk_username (username)
 );
 
 create table follows
@@ -15,3 +16,4 @@ create table follows
     following_id bigint not null comment '팔로우 유저 아이디',
     follower_id  bigint not null comment '팔로워 유저 아이디'
 );
+
