@@ -17,3 +17,9 @@ create table follows
     follower_id  bigint not null comment '팔로워 유저 아이디'
 );
 
+create table tags
+(
+    id   bigint primary key key auto_increment comment '태그 시퀀스',
+    name varchar(20) not null comment '태그명',
+    unique uk_name (name)
+);
