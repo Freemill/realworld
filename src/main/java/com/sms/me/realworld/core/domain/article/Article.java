@@ -35,7 +35,16 @@ public class Article {
                 .build();
     }
 
-    public void enhance(Profile author, boolean favorited) {
+    public void enhance(List<Tag> tags, Profile author, boolean favorited) {
+        enhance(tags);
+        enhance(author, favorited);
+    }
+
+    private void enhance(List<Tag> tags) {
+        this.tagList = tags;
+    }
+
+    private void enhance(Profile author, boolean favorited) {
         this.author = author;
         this.favorited = favorited;
     }

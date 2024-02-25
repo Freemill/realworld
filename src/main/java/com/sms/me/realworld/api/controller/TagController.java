@@ -24,7 +24,7 @@ public class TagController implements TagApiSpec {
     @GetMapping
     @PreAuthorize("hasRole('NO_AUTH')")
     public TagListResponse getTags() {
-        List<Tag> tags = tagService.getTags();
+        List<Tag> tags = tagService.getAllTags();
 
         return TagListResponse.of(tags);
     }

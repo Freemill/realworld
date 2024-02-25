@@ -1,12 +1,14 @@
 package com.sms.me.realworld.core.domain.tag;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@Builder
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Entity
 @Table(name = "tags")
 public class TagEntity {
@@ -17,4 +19,7 @@ public class TagEntity {
     @Column(nullable = false, updatable = false, unique = true)
     private String name;
 
+    public TagEntity(String name) {
+        this.name = name;
+    }
 }

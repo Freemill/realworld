@@ -1,26 +1,38 @@
 package com.sms.me.realworld.core.domain.article;
 
 import com.sms.me.realworld.core.domain.article.command.ArticleCreateCommand;
-import com.sms.me.realworld.core.domain.article.slug.SlugRepository;
+import com.sms.me.realworld.core.domain.articletag.ArticleTagService;
 import com.sms.me.realworld.core.domain.profile.Profile;
 import com.sms.me.realworld.core.domain.profile.ProfileFacade;
+import com.sms.me.realworld.core.domain.tag.Tag;
 import com.sms.me.realworld.core.domain.tag.TagService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class ArticleFacade {
     private final ArticleService articleService;
-    private final SlugRepository slugRepository;
     private final ProfileFacade profileFacade;
     private final TagService tagService;
+    private final ArticleTagService articleTagService;
 
     public Article createArticle(ArticleCreateCommand command) {
+        // article
         Article article = articleService.createArticle(command);
+
+        // tag
+        List<Tag> tags = tagService.createOrGetTags(command.getTagList());
+
+        // articleTag
+        articleTagService.createArticleTag(article, tags);
+
+        // profile
         Profile profile = profileFacade.getProfile(command.getAuthorId(), command.getAuthorId());
 
-        article.enhance(profile, false);
+        article.enhance(tags, profile, false);
 
         return article;
     }

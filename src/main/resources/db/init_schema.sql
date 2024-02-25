@@ -43,4 +43,11 @@ create table slugs
 (
     name  varchar(100) primary key comment '슬러그 명',
     count int not null default 1 comment '슬러그 카운트'
-)
+);
+
+create table article_tags
+(
+    id         bigint primary key auto_increment comment '아티클_태그 시퀀스',
+    article_id bigint not null comment '아티클 아이디',
+    tag_id     bigint not null comment '태그 아이디'
+);

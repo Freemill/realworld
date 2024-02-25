@@ -1,4 +1,4 @@
-package com.sms.me.realworld.core.domain.follow;
+package com.sms.me.realworld.core.domain.article;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -8,18 +8,20 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-@Table(name = "follows")
-public class FollowEntity {
+@Table(name = "article_tags")
+public class ArticleTagEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false, updatable = false)
-    private Long followingId;
-    @Column(nullable = false, updatable = false)
-    private Long followerId;
 
-    public FollowEntity(Long followingId, Long followerId) {
-        this.followingId = followingId;
-        this.followerId = followerId;
+    @Column(nullable = false, updatable = false)
+    private Long articleId;
+
+    @Column(nullable = false, updatable = false)
+    private Long tagId;
+
+    public ArticleTagEntity(Long articleId, Long tagId) {
+        this.articleId = articleId;
+        this.tagId = tagId;
     }
 }

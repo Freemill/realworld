@@ -45,6 +45,9 @@ dependencies {
     //swagger
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
 
+    //apache common
+    implementation("org.apache.commons:commons-collections4:4.1")
+
 
     //db
     runtimeOnly("com.mysql:mysql-connector-j")
@@ -54,6 +57,7 @@ dependencies {
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
+
 
 }
 
