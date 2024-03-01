@@ -14,6 +14,7 @@ public class TagService {
     private final TagRepository tagRepository;
 
     public List<Tag> getAllTags() {
+        // limit offset paging
         return tagRepository.findAll().stream()
                 .map(entity -> new Tag(entity.getId(), entity.getName()))
                 .toList();

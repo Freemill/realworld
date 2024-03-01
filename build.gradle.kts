@@ -48,6 +48,8 @@ dependencies {
     //apache common
     implementation("org.apache.commons:commons-collections4:4.1")
 
+    //redis
+    implementation("org.springframework.boot:spring-boot-starter-data-redis")
 
     //db
     runtimeOnly("com.mysql:mysql-connector-j")

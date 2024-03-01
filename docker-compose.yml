@@ -13,3 +13,11 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_USER=sms
       - MYSQL_PASSWORD=qwerty123
+
+  redis:
+    build:
+      context: localenvs/redis
+    volumes:
+      - ./localenvs/volumes/redis/data:/var/log/redis/redis-server.log
+    ports:
+      - "6379:6379"
