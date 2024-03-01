@@ -19,7 +19,9 @@ create table follows
     following_id bigint      not null comment '팔로우 유저 아이디',
     follower_id  bigint      not null comment '팔로워 유저 아이디',
     created_at   datetime(6) not null comment '생성 시간',
-    modified_at  datetime(6) not null comment '수정 시간'
+    modified_at  datetime(6) not null comment '수정 시간',
+
+    unique uk_following_follower_id (following_id, follower_id)
 );
 
 create table tags
@@ -28,6 +30,7 @@ create table tags
     name        varchar(20) not null comment '태그명',
     created_at  datetime(6) not null comment '생성 시간',
     modified_at datetime(6) not null comment '수정 시간',
+
     unique uk_name (name)
 );
 
@@ -42,7 +45,9 @@ create table articles
     favorites_count int          not null default 0 comment '좋아요 수',
     created_at      datetime(6)  not null comment '생성 시간',
     modified_at     datetime(6)  not null comment '수정 시간',
-    unique uk_slug (slug)
+
+    unique uk_slug (slug),
+    index idx_author_id (author_id)
 );
 
 create table slugs
@@ -59,5 +64,8 @@ create table article_tags
     article_id  bigint      not null comment '아티클 아이디',
     tag_id      bigint      not null comment '태그 아이디',
     created_at  datetime(6) not null comment '생성 시간',
-    modified_at datetime(6) not null comment '수정 시간'
+    modified_at datetime(6) not null comment '수정 시간',
+
+    unique uk_article_tag_id (article_id, tag_id),
+    index idx_tag_id (tag_id)
 );
