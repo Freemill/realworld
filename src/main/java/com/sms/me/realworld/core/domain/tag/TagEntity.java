@@ -1,5 +1,6 @@
 package com.sms.me.realworld.core.domain.tag;
 
+import com.sms.me.realworld.core.domain.common.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -11,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "tags")
-public class TagEntity {
+public class TagEntity extends AuditableEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

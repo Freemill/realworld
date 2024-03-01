@@ -1,6 +1,7 @@
 package com.sms.me.realworld.core.domain.article;
 
 
+import com.sms.me.realworld.core.domain.common.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,7 +11,7 @@ import lombok.*;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "articles")
-public class ArticleEntity {
+public class ArticleEntity extends AuditableEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

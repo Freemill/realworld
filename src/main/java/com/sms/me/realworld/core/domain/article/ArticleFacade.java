@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -24,7 +25,7 @@ public class ArticleFacade {
         Article article = articleService.createArticle(command);
 
         // tag
-        List<Tag> tags = tagService.createOrGetTags(command.getTagList());
+        List<Tag> tags = tagService.createOrGetTags(Set.copyOf(command.getTagList()));
 
         // articleTag
         articleTagService.createArticleTag(article, tags);

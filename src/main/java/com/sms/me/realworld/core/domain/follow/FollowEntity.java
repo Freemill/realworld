@@ -1,5 +1,6 @@
 package com.sms.me.realworld.core.domain.follow;
 
+import com.sms.me.realworld.core.domain.common.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "follows")
-public class FollowEntity {
+public class FollowEntity extends AuditableEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

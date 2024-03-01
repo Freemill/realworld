@@ -5,6 +5,7 @@ import org.apache.commons.collections4.ListUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -18,7 +19,7 @@ public class TagService {
                 .toList();
     }
 
-    public List<Tag> createOrGetTags(List<String> tagList) {
+    public List<Tag> createOrGetTags(Set<String> tagList) {
         List<Tag> savedTags = tagRepository.findAllByNameIn(tagList).stream()
                 .map(Tag::of)
                 .toList();

@@ -37,6 +37,8 @@ public class ArticleCreateResponse {
                 .favorited(false)
                 .favoritesCount(article.getFavoritesCount())
                 .author(article.getAuthor())
+                .createdAt(article.getCreatedAt())
+                .updatedAt(article.getModifiedAt())
                 .build();
     }
 }

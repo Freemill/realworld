@@ -1,5 +1,6 @@
 package com.sms.me.realworld.core.domain.user;
 
+import com.sms.me.realworld.core.domain.common.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,7 +10,7 @@ import lombok.*;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "users") //user는 예약어
-public class UserEntity {
+public class UserEntity extends AuditableEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

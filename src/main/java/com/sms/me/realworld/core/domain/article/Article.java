@@ -23,7 +23,7 @@ public class Article {
     private Integer favoritesCount;
     private Profile author;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private LocalDateTime modifiedAt;
 
     public static Article of(ArticleEntity entity) {
         return Article.builder()
@@ -32,6 +32,9 @@ public class Article {
                 .title(entity.getTitle())
                 .description(entity.getDescription())
                 .body(entity.getBody())
+                .favoritesCount(entity.getFavoritesCount())
+                .createdAt(entity.getCreatedAt())
+                .modifiedAt(entity.getModifiedAt())
                 .build();
     }
 

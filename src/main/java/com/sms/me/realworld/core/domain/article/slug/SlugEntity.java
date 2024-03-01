@@ -1,5 +1,6 @@
 package com.sms.me.realworld.core.domain.article.slug;
 
+import com.sms.me.realworld.core.domain.common.AuditableEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "slugs")
-public class SlugEntity {
+public class SlugEntity extends AuditableEntity {
 
     @Id
     private String name;
