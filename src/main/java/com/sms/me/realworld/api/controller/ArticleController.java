@@ -71,4 +71,10 @@ public class ArticleController implements ArticleApiSpec {
         articleFacade.getArticle(pageable, tag, author, favorited);
         return Collections.emptyList();
     }
+
+    @GetMapping("/feed")
+    @PreAuthorize("hasRole('USER')")
+    public List<String> getArticles() {
+        return Collections.emptyList();
+    }
 }
