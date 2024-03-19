@@ -22,7 +22,7 @@ public class TagController implements TagApiSpec {
     private final TagService tagService;
 
     @GetMapping
-    @PreAuthorize("hasRole('NO_AUTH')")
+    @PreAuthorize("hasAnyRole('NO_AUTH', 'USER')")
     public TagListResponse getTags() {
         List<Tag> tags = tagService.getAllTags();
 
