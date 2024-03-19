@@ -65,10 +65,10 @@ public class ArticleController implements ArticleApiSpec {
             @RequestParam(defaultValue = "20") int limit,
             @RequestParam(defaultValue = "0") int offset
     ) {
-        Long userId = userDetails.userId;
-        Pageable pageable = PageRequest.of(offset, limit);
-
-        articleFacade.getArticle(pageable, tag, author, favorited);
+//        Long userId = userDetails.userId;
+//        Pageable pageable = PageRequest.of(offset, limit);
+//
+//        articleFacade.getArticle(pageable, tag, author, favorited);
         return Collections.emptyList();
     }
 
