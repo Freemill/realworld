@@ -1,4 +1,4 @@
-package com.sms.me.realworld.core.domain.follow;
+package com.sms.me.realworld.core.domain.article.articleuser;
 
 import com.sms.me.realworld.core.domain.common.AuditableEntity;
 import jakarta.persistence.*;
@@ -9,20 +9,20 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-@Table(name = "follows")
-public class FollowEntity extends AuditableEntity {
+@Table(name = "favorite_articles")
+public class FavoriteArticleEntity extends AuditableEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, updatable = false)
-    private Long followingId;
+    private Long articleId;
 
     @Column(nullable = false, updatable = false)
-    private Long followerId;
+    private Long userId;
 
-    public FollowEntity(Long followingId, Long followerId) {
-        this.followingId = followingId;
-        this.followerId = followerId;
+    public FavoriteArticleEntity(Long articleId, Long userId) {
+        this.articleId = articleId;
+        this.userId = userId;
     }
 }

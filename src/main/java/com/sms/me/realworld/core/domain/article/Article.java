@@ -13,6 +13,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 public class Article {
+
     private long id;
     private String slug;
     private String title;

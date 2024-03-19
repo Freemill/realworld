@@ -69,3 +69,14 @@ create table article_tags
     unique uk_article_tag_id (article_id, tag_id),
     index idx_tag_id (tag_id)
 );
+
+create table favorite_articles
+(
+    id          bigint primary key auto_increment comment '좋아요 시퀀스',
+    article_id  bigint      not null comment '아티클 아이디',
+    user_id     bigint      not null comment '유저 아이디',
+    created_at  datetime(6) not null comment '생성 시간',
+    modified_at datetime(6) not null comment '수정 시간',
+
+    unique uk_user_article_id (user_id, article_id)
+);

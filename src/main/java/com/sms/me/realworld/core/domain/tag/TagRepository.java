@@ -7,5 +7,4 @@ import java.util.Set;
 
 public interface TagRepository extends JpaRepository<TagEntity, Long> {
     List<TagEntity> findAllByNameIn(Set<String> tagNames);
-
 }

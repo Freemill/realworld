@@ -24,21 +24,21 @@ public class ProfileFacade {
         return Profile.of(user, following);
     }
 
-    public Profile getProfile(Long followingId, String targetUsername) {
+    public Profile getProfile(Long userId, String targetUsername) {
         User targetUser = userQueryService.getUserOrThrow(targetUsername);
-        boolean following = followService.isFollowing(followingId, targetUser.getId());
+        boolean following = followService.isFollowing(userId, targetUser.getId());
         return Profile.of(targetUser, following);
     }
 
-    public Profile follow(Long followingId, String targetUsername) {
+    public Profile follow(Long userId, String targetUsername) {
         User targetUser = userQueryService.getUserOrThrow(targetUsername);
-        followService.follow(followingId, targetUser.getId());
+        followService.follow(userId, targetUser.getId());
         return Profile.of(targetUser, true);
     }
 
-    public Profile unfollow(Long followingId, String targetUsername) {
+    public Profile unfollow(Long userId, String targetUsername) {
         User targetUser = userQueryService.getUserOrThrow(targetUsername);
-        followService.unfollow(followingId, targetUser.getId());
+        followService.unfollow(userId, targetUser.getId());
         return Profile.of(targetUser, false);
     }
 }

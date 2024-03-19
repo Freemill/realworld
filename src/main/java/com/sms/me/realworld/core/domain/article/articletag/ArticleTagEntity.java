@@ -1,4 +1,4 @@
-package com.sms.me.realworld.core.domain.article;
+package com.sms.me.realworld.core.domain.article.articletag;
 
 import com.sms.me.realworld.core.domain.common.AuditableEntity;
 import jakarta.persistence.*;

@@ -3,6 +3,7 @@ package com.sms.me.realworld.core.domain.tag;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections4.ListUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Set;
@@ -14,12 +15,13 @@ public class TagService {
     private final TagRepository tagRepository;
 
     public List<Tag> getAllTags() {
-        // limit offset paging
+        // TODO limit offset paging
         return tagRepository.findAll().stream()
                 .map(entity -> new Tag(entity.getId(), entity.getName()))
                 .toList();
     }
 
+    @Transactional
     public List<Tag> createOrGetTags(Set<String> tagList) {
         List<Tag> savedTags = tagRepository.findAllByNameIn(tagList).stream()
                 .map(Tag::of)

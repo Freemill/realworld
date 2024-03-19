@@ -34,4 +34,11 @@ public class ArticleEntity extends AuditableEntity {
     @Column(nullable = false)
     private Integer favoritesCount;
 
+    public void increaseFavoritesCount() {
+        this.favoritesCount++;
+    }
+
+    public void decreaseFavoritesCount() {
+        this.favoritesCount--;
+    }
 }

@@ -19,9 +19,10 @@ public interface ArticleApiSpec {
 
     @Operation(summary = "게시물 리스트 조회")
     List<String> getArticles(
+            AuthUserDetails userDetails,
             String tag,
             String author,
-            String favorited,
+            boolean favorited,
             int limit,
             int offset
     );
