@@ -1,4 +1,5 @@
-<img width="924" alt="image" src="https://github.com/Freemill/realworld/assets/76586084/f95fb8ab-9e28-4f28-a505-1451fe0182cd">
+<img width="955" alt="image" src="https://github.com/Freemill/realworld/assets/76586084/eeee248e-5c2e-4ec2-9dc7-45f27b37e2e3">
+
 
 url Link 
 https://critical-world.duckdns.org/
