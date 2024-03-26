@@ -9,9 +9,9 @@ spring:
 spring:
   config.activate.on-profile: dev
   datasource:
-    url: ENC(fN2bMJC0n32LmeZTtrOa7es7hNEYyJuLCe7WE8AernItO278thDkJI8y9fWpmrpspCzB+IDl0TtEMEV+djTn3HmMYBsNlPHDN6FDZa78QJNsSceCVLcIY9toHBUoJzM/gzpYwHg1mHs=)
-    username: ENC(KK/rEJ9Yc+3FWZ02POvb1w==)
-    password: ENC(ab18+wsT1dg62d2Vsmv7bJLrJpw2EquM)
+    url: ENC(CB0fNnukyeBY72XqnJjV0jADiGufuqD1Bc46Vm6gTO8=)
+    username: ENC(vdkQSEArhEosGh2Qkx4nrw==)
+    password: ENC(NLRSQWRAo172vB5xTD0Y+Ziyo0r9toIk)
 
 ---
 springS:
